@@ -1,0 +1,34 @@
+
+services:
+  db:
+    image: mysql:8
+    restart: always
+    environment:
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+    networks:
+      - backend
+    volumes:
+      - db_data:/var/lib/mysql
+
+  web:
+    build: .
+    command: sh /app/wait-for-db.sh
+    volumes:
+      - .:/app
+    ports:
+      - "127.0.0.1:8000:8000"   # solo accesible localmente
+    depends_on:
+      - db
+    env_file:
+      - .env
+    networks:
+      - backend
+
+volumes:
+  db_data:
+
+networks:
+  backend:
