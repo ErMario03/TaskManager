@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Crear tarea</title>
-    <link rel="stylesheet" href="{% static 'css/taskManager/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tasks/styles.css' %}">
 </head>
 <body>
 
@@ -15,7 +15,7 @@
 <main class="main-content">
     <h1>Nueva tarea</h1>
 
-    <form>
+    <form method="post" action="{% url 'tasks:create' %}">
         {% csrf_token %}
 
         <div class="form-group">

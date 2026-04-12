@@ -1,4 +1,3 @@
-
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
@@ -6,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Home | TaskManager</title>
 
-    <link rel="stylesheet" href="{% static 'css/taskManager/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tasks/styles.css' %}">
 </head>
 
 <body>
@@ -34,7 +33,7 @@
             <p>Consulta y gestiona tus tareas</p>
         </a>
 
-        <a href="{% url 'taskManager:create' %}" class="card">
+        <a href="{% url 'tasks:create' %}" class="card">
             <h2>➕ Nueva tarea</h2>
             <p>Crea una nueva tarea rápidamente</p>
         </a>
