@@ -1,14 +1,55 @@
+
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Home | TaskManager</title>
+
     <link rel="stylesheet" href="{% static 'css/taskManager/styles.css' %}">
 </head>
+
 <body>
 
-    <h1>Hello To My Project</h1>
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="navbar-logo">
+        TaskManager
+    </div>
+    <ul class="navbar-links">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Tareas</a></li>
+        <li><a href="#">Perfil</a></li>
+        <li><a href="#">Salir</a></li>
+    </ul>
+</nav>
+
+<!-- CONTENIDO PRINCIPAL -->
+<main class="main-content">
+    <h1>¿Qué quieres hacer?</h1>
+
+    <div class="card-grid">
+        <a href="#" class="card">
+            <h2>📋 Ver tareas</h2>
+            <p>Consulta y gestiona tus tareas</p>
+        </a>
+
+        <a href="{% url 'taskManager:create' %}" class="card">
+            <h2>➕ Nueva tarea</h2>
+            <p>Crea una nueva tarea rápidamente</p>
+        </a>
+
+        <a href="#" class="card">
+            <h2>✅ Completadas</h2>
+            <p>Revisa las tareas realizadas</p>
+        </a>
+
+        <a href="#" class="card">
+            <h2>⚙️ Ajustes</h2>
+            <p>Configura tu cuenta</p>
+        </a>
+    </div>
+</main>
 
 </body>
 </html>
